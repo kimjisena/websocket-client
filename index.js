@@ -24,7 +24,7 @@ fetch(process.env.HTTP_SERVER_URL, sessionOpts)
             const ws = new WebSocket(process.env.SOCKET_SERVER_URL, opts);
             
             ws.on('open', function open() {
-                ws.send('something');
+                ws.send('we have an open connection');
             });
 
             ws.on('message', function message(data) {
@@ -33,7 +33,7 @@ fetch(process.env.HTTP_SERVER_URL, sessionOpts)
             });
 
             ws.on('unexpected-response', function unexpected(req, res) {
-                console.log('Client Request: %o', req);
+                console.log('server response: %o', res);
             });
 
             ws.on('error', function error (data) {
