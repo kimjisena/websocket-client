@@ -24,7 +24,7 @@ fetch(process.env.HTTP_SERVER_URL, sessionOpts)
             const ws = new WebSocket(process.env.SOCKET_SERVER_URL, opts);
             
             ws.on('open', function open() {
-                ws.send('we have an open connection');
+                console.log('we have an open connection');
             });
 
             ws.on('message', function message(data) {
